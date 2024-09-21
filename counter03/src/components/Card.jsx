@@ -1,6 +1,10 @@
 import React from 'react'
 
-function Card() {
+function Card({username, btnText})  // this is done for the dom manipulation for passing the variables in the js.
+
+// one thing if you are not writing props inside it then react automatically takes it as props{default nature}
+ {
+  
   return (
     <div>
     <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -22,11 +26,12 @@ function Card() {
               className="mx-auto h-10 w-10 rounded-full"
             />
             <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-              <div className="font-semibold text-gray-900">Judith Black</div>
+              <div className="font-semibold text-gray-900">{username}</div>
               <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
                 <circle r={1} cx={1} cy={1} />
               </svg>
               <div className="text-gray-600">CEO of Workcation</div>
+              <button>{btnText || "hover me"}</button>
             </div>
           </figcaption>
         </figure>
